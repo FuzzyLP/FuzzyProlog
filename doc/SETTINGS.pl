@@ -1,16 +1,6 @@
-:- module(_, _, [assertions, regtypes, fsyntax]).
+:- module(_, _, [lpdoclib(doccfg)]).
 
-:- include(lpdoclib('SETTINGS_schema')).
-% ****************************************************************************
-% This is an LPdoc configuration file. See SETTINGS_schema for documentation *
-% ****************************************************************************
-
-:- doc(title, "Settings for FuzzyProlog manual").
-:- doc(author, "Jose F. Morales").
-:- doc(filetype, user).
-
-:- use_module(library(system)).
-:- use_module(library(bundle/paths_extra), [fsR/2]).
+:- doc(title, "Configuration for FuzzyProlog manual").
 
 datamode(_) :- fail.
 execmode(_) :- fail.
