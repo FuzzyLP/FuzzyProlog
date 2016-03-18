@@ -2,9 +2,8 @@
 
 :- doc(title, "Configuration for FuzzyProlog manual").
 
-filepath := ~fsR(bundle_src('FuzzyProlog')/doc).
-filepath := ~fsR(bundle_src('FuzzyProlog')/lib).
-filepath := ~fsR(bundle_src('FuzzyProlog')). % (for examples/)
+filepath := '../lib'.
+filepath := '..'. % (for examples/)
 
 output_name := 'FuzzyProlog'.
 
