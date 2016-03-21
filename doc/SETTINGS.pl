@@ -1,6 +1,6 @@
-:- module(_, _, [lpdoclib(doccfg)]).
+:- module(_, [], [lpdoclib(doccfg)]).
 
-:- doc(title, "Configuration for FuzzyProlog manual").
+%! \title Configuration for FuzzyProlog manual
 
 filepath := '../lib'.
 filepath := '..'. % (for examples/)
