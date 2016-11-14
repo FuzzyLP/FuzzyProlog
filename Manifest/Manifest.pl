@@ -1,9 +1,8 @@
-% Manifest file for FuzzyProlog
-bundle_name('FuzzyProlog').
-bundle_packname('FuzzyProlog').
-bundle_requires([core]).
-bundle_alias_paths([
+:- bundle('FuzzyProlog').
+version('1.0').
+depends([core]).
+alias_paths([
     library = 'lib'
 ]).
-
-
+lib('lib').
+manual('FuzzyProlog', [main='doc/SETTINGS.pl']).
