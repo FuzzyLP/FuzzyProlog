@@ -1,5 +1,6 @@
-:- module(fuzzy_tr,[fuzzy_pred/3,fuzzy_pred2/3],[]).
+:- module(fuzzy_tr,[fuzzy_pred/3,fuzzy_pred2/3],[datafacts]).
 
+:- use_module(engine(basic_props), [list/1]).
 :- use_module(library(aggregates), [findall/4]).
 :- use_module(library(terms), [copy_args/3]).
 :- use_module(library(messages), [error_message/2]).

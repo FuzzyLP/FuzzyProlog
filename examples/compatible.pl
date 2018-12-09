@@ -1,5 +1,7 @@
 :- module(compatible,_,[fuzzy]).
 
+:- use_module(library(lists), [member/2]).
+
 compatible(T1,T2,M):~ 
 	correct_turn(T1),
 	correct_turn(T2),

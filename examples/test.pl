@@ -1,5 +1,6 @@
 :- module(test,[main/0],[fuzzy]).
 
+:- use_module(library(streams)).
 :- use_module(example7, [good_player1/2, good_player2/2]).
 
 main:- 

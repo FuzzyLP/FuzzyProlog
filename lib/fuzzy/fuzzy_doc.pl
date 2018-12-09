@@ -1,5 +1,6 @@
 :- use_package([assertions,regtypes]).
 :- doc(nodoc,assertions).
+:- doc(nodoc,assertions_basic).
 :- doc(nodoc,regtypes).
 
 :- doc(bug,"General aggregations defined by users.").

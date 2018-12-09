@@ -2,6 +2,7 @@
 	prod/3,min/3,luka/3,dprod/3,max/3,dluka/3,'=>'/4],
 	[clpr,hiord]).
 
+:- use_module(engine(basic_props), [list/1]).
 
 min(X,Y,Z):- X .=<. Y , Z .=. X.
 min(X,Y,Z):- X .>. Y, Z .=. Y .
