@@ -60,7 +60,7 @@ distribution.
 
 :- include(library(fuzzy/ops)).
 
-:- true pred ':#'(Name, Decl) => predname * fuzzydecl
+:- trust pred ':#'(Name, Decl) => predname * fuzzydecl
         # "Defines fuzzy predicate @var{Name} from the declaration
           @var{Decl}.".
 
@@ -74,7 +74,7 @@ fuzzydecl(fuzzy_predicate(_)).
 fuzzydecl(fuzzy(_)).
 fuzzydecl(fnot(_)).
 
-:- true pred fuzzy_predicate(Domain) : list
+:- trust pred fuzzy_predicate(Domain) : list
         # "Defines a fuzzy predicate with piecewise linear continuous
            membership function. This is given by @var{Domain}, which
            is a list of pairs of domain-truth values, in increasing order
@@ -91,7 +91,7 @@ young(X,0):- X .>=. 45, X .=<. 120.
 ".
 :- impl_defined(fuzzy_predicate/1).
 
-:- true pred fuzzy(Name) : predname
+:- trust pred fuzzy(Name) : predname
         # "Defines a fuzzy predicate as the fuzzy counterpart of a crisp
            predicate @var{Name}. For example,
 @begin{verbatim}
@@ -102,7 +102,7 @@ p_f :# fuzzy p/2
            if @tt{p/2} fails and 1 otherwise.".
 :- impl_defined(fuzzy/1).
 
-:- true pred fnot(Name) : predname
+:- trust pred fnot(Name) : predname
         # "Defines a fuzzy predicate as the fuzzy negation of another
            fuzzy predicate @var{Name}. For example,
 @begin{verbatim}
@@ -117,7 +117,7 @@ notp_f(X,Y,M) :-
 ".
 :- impl_defined(fnot/1).
 
-:- true pred :~(Head, Body) : callable * fuzzybody
+:- trust pred :~(Head, Body) : callable * fuzzybody
         # "Defines a fuzzy clause for a fuzzy predicate. The clause contains
            calls to either fuzzy or crisp predicates. Calls to crisp
            predicates are automatically fuzzified. The last argument of
@@ -140,7 +140,7 @@ M .=. 0.6 ?
            aggregation operator. The agregators currently provided are
            listed under @var{faggregator/1}. By default, the aggregator
            used is @tt{min}.").
-:- true prop fuzzybody(B)
+:- trust prop fuzzybody(B)
 	# "@var{B} is a clause body plus an optional aggregation operator.".
 :- impl_defined(fuzzybody/1).
 
@@ -160,7 +160,7 @@ faggregator(max).
 faggregator(dprod).
 faggregator(dluka).
 
-:- true decl aggr(Name) : constant
+:- trust decl aggr(Name) : constant
         # "Declares @var{Name} an aggregator. Its binary definition
            has to be provided. For example:
 @begin{verbatim}
@@ -170,7 +170,7 @@ myaggr(X,Y,Z):- Z .=. X*Y.
 @end{verbatim}
            defines an aggregator identical to @tt{prod}.".
 
-:- true pred =>(Aggr,A,B,Truth) : faggregator * callable * callable * var
+:- trust pred =>(Aggr,A,B,Truth) : faggregator * callable * callable * var
         # "The fuzzy implication @tt{A => B} defined by aggregator
            @var{Aggr}, resulting in the truth value @var{Truth}.".
 :- impl_defined((=>)/4).
